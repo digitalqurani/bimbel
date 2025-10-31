@@ -1,27 +1,16 @@
+# React + Vite
 
-MDIQ Bimbel - React + Vite + Tailwind + Firebase (Auth + Firestore)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Steps to use:
+Currently, two official plugins are available:
 
-1. Install dependencies
-   npm install
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-2. Fill Firebase config:
-   - open src/firebaseConfig.js and replace YOUR_API_KEY, YOUR_MESSAGING_SENDER_ID, YOUR_APP_ID
-   - projectId should be 'mdiq-bimbel' (already set)
+## React Compiler
 
-3. Enable Firebase services:
-   - In Firebase Console, enable Authentication (Email/Password)
-   - Create admin user (e.g., admin@mdiq.com) with a password via Authentication -> Users -> Add user
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-4. Enable Firestore and set rules:
-   - In Firebase Console -> Firestore -> Rules, replace rules with contents of firestore.rules
-   - Or deploy rules with: firebase deploy --only firestore:rules
+## Expanding the ESLint configuration
 
-5. Build & Deploy Hosting:
-   npm run build
-   firebase deploy --only hosting
-
-6. Notes:
-   - The registration form saves to Firestore collection 'pendaftaran' and also opens WhatsApp.
-   - Only authenticated user with email admin@mdiq.com can read/update/delete entries per provided rules.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
